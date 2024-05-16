@@ -8,26 +8,64 @@
   </head>
   <body>
     <header>
-      <div class="logo">Logo</div>
-      <nav>
-        <a href="#" class="login-signup">Log In / Sign Up</a>
-        <a href="#" class="list-business">List Your Business</a>
+      <div class="header-top">
+        <div class="logo-container">
+          <div class="logo">BookFit</div>
+        </div>
+        <div class="header-right">
+          <button class="login">Log In / Sign Up</button>
+          <button class="list-business">List Your Business</button>
+          <select class="language">
+            <option value="us">US</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-section">
+        <h1>Discover Training and Wellness Professionals Near You</h1>
+        <input type="text" placeholder="Search services or businesses" />
+      </div>
+      <nav class="services-nav">
+        <a href="#">Athletic</a>
+        <a href="#">Tone</a>
+        <a href="#">Nutrition</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">More...</a>
       </nav>
     </header>
-    <section class="here">
-      <img src="" alt="Main Image" class="hero-image" />
-      <div class="hero-text">
-        <h1>Book Your Trainer</h1>
-        <div class="categories">
-          <a href="#" Men></a>
-          <a href="#" Women></a>
-          <a href="#" Athletes></a>
-          <a href="#">Bodybuild</a>
-          <a href="#">Nutrition</a>
+
+    <section class="recommended">
+      <h2>Recommended</h2>
+      <div class="service-card">
+        <img src="path/to/image1.jpg" alt="Service 1" />
+        <div class="details">
+          <h3>Trainer 1</h3>
+          <p>5.0 - 504 reviews</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="path/to/image2.jpg" alt="Service 2" />
+        <div class="details">
+          <h3>Trainer 2</h3>
+          <p>5.0 - 383 reviews</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="path/to/image3.jpg" alt="Service 3" />
+        <div class="details">
+          <h3>Trainer 3</h3>
+          <p>5.0 - 214 reviews</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="path/to/image4.jpg" alt="Service 4" />
+        <div class="details">
+          <h3>Trainer 4</h3>
+          <p>5.0 - 323 reviews</p>
         </div>
       </div>
     </section>
-    <section class="recommended"></section>
-    <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>
