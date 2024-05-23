@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const trainerImages = {
-  "Leanne Graham": "path/to/leanne.jpg",
-  "Ervin Howell": "path/to/ervin.jpg",
-  "Clementine Bauch": "path/to/clementine.jpg",
-  "Patricia Lebsack": "path/to/patricia.jpg",
-  "Chelsey Dietrich": "path/to/chelsey.jpg"
+  "Leanne Graham": "imgs/leanne.jpeg",
+  "Ervin Howell": "imgs/ervin.jpeg",
+  "Clementine Bauch": "imgs/clementine.jpeg",
+  "Patricia Lebsack": "imgs/patricia.jpeg",
+  "Chelsey Dietrich": "imgs/chelsey.jpeg"
 };
 
 function displayUserCards(users) {
