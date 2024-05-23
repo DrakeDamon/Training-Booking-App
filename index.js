@@ -50,16 +50,18 @@ function displayUserCards(users) {
       </div>
     `;
 
+    // Event listener for flipping the card
     card.querySelector('.service-card').addEventListener("click", () => {
       card.querySelector('.service-card').classList.toggle("flipped");
     });
 
-    card.addEventListener("mouseover", () => {
-      card.classList.add("highlight");
+    // Event listeners for highlighting the card-front
+    card.querySelector('.card-front').addEventListener("mouseover", () => {
+      card.querySelector('.card-front').classList.add("highlight");
     });
 
-    card.addEventListener("mouseout", () => {
-      card.classList.remove("highlight");
+    card.querySelector('.card-front').addEventListener("mouseout", () => {
+      card.querySelector('.card-front').classList.remove("highlight");
     });
 
     container.appendChild(card);
