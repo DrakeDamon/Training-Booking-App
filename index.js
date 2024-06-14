@@ -1,28 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
+  
   // Fetch user data and display user cards
   fetch("https://jsonplaceholder.typicode.com/users")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok ${response.statusText}`);
-      }
-      return response.json();
-    })
+    .then(response => response.json())
     .then(users => {
       const limitedUsers = users.slice(0, 5); // Limit to first 5 users
       displayUserCards(limitedUsers);
-      addEventListeners(limitedUsers); // Pass users to add event listeners
+      addEventListeners(limitedUsers); 
     })
+
     .catch(error => console.error("Error fetching user data:", error));
 
-  // Dark/Light Mode Toggle
-  const modeToggle = document.getElementById('mode-toggle');
-  modeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
-    document.querySelector('header').classList.toggle('dark-mode');
-    document.querySelector('.services-nav').classList.toggle('dark-mode');
-    document.querySelector('.recommended').classList.toggle('dark-mode');
-    document.querySelector('.search-text input').classList.toggle('dark-mode');
-  });
 });
 
 const trainerImages = {
@@ -35,14 +24,14 @@ const trainerImages = {
 
 function displayUserCards(users) {
   const container = document.getElementById("service-card-container");
-  container.innerHTML = ""; // Clear previous content
+  container.innerHTML = ""; 
 
   users.forEach(user => {
     const card = document.createElement("div");
-    card.classList.add("single-card");
+    card.classList.add("single-card"); // add class of single-card for html and css
 
-    // Use the trainer's image if available, otherwise use a placeholder
-    const imageUrl = trainerImages[user.name] || "https://via.placeholder.com/150";
+    //create a variable linking the img to the correct person
+    const imageUrl = trainerImages[user.name] || "https://via.placeholder.com/150"; 
 
     card.innerHTML = `
       <div class="service-card">
@@ -62,12 +51,12 @@ function displayUserCards(users) {
     `;
 
     // Event listener for flipping the card
-    card.querySelector('.service-card').addEventListener("click", () => {
+    card.querySelector('.service-card').addEventListener("click", function() {
       card.querySelector('.service-card').classList.toggle("flipped");
     });
 
     // Event listeners for highlighting the card-front
-    card.querySelector('.card-front').addEventListener("mouseover", () => {
+    card.querySelector('.card-front').addEventListener("mouseover", function() {
       card.querySelector('.card-front').classList.add("highlight");
     });
 
@@ -88,6 +77,4 @@ function addEventListeners(users) {
     );
     displayUserCards(filteredUsers);
   });
-
-  
 }

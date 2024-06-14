@@ -214,9 +214,9 @@ input {
 }
 
 /* Effects */
-.single-card:hover {
-}
+/* .single-card:hover {
+} */
 
 .card-front.highlight {
-  border: 2px solid #d8dbde9b;
+  border: 2px solid green;
 }
