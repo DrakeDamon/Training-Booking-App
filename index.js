@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Fetch user data and display user cards
   fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => {
       if (!response.ok) {
@@ -12,6 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
       addEventListeners(limitedUsers); // Pass users to add event listeners
     })
     .catch(error => console.error("Error fetching user data:", error));
+
+  // Dark/Light Mode Toggle
+  const modeToggle = document.getElementById('mode-toggle');
+  modeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelector('.services-nav').classList.toggle('dark-mode');
+    document.querySelector('.recommended').classList.toggle('dark-mode');
+    document.querySelector('.search-text input').classList.toggle('dark-mode');
+  });
 });
 
 const trainerImages = {
@@ -78,8 +89,5 @@ function addEventListeners(users) {
     displayUserCards(filteredUsers);
   });
 
-  const languageSelect = document.querySelector(".language");
-  languageSelect.addEventListener("change", (event) => {
-    document.body.classList.toggle("dark-mode");
-  });
+  
 }
