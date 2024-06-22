@@ -23,16 +23,20 @@ const trainerImages = {
 };
 
 function displayUserCards(users) {
+  //grabbed container element and cleared it
   const container = document.getElementById("service-card-container");
   container.innerHTML = ""; 
 
+  //used forEach() method to loop through each user 
   users.forEach(user => {
+    //created div element and added a class of single-card
     const card = document.createElement("div");
     card.classList.add("single-card"); // add class of single-card for html and css
 
     //create a variable linking the img to the correct person
     const imageUrl = trainerImages[user.name] || "https://via.placeholder.com/150"; 
 
+    //added elements inside of the card element to create the front and back of card
     card.innerHTML = `
       <div class="service-card">
         <div class="card-front">
@@ -60,7 +64,7 @@ function displayUserCards(users) {
       card.querySelector('.card-front').classList.add("highlight");
     });
 
-    card.querySelector('.card-front').addEventListener("mouseout", () => {
+    card.querySelector('.card-front').addEventListener("mouseout", function() {
       card.querySelector('.card-front').classList.remove("highlight");
     });
 
